@@ -1,0 +1,100 @@
+es:
+  app_name: 'Productos Ven'
+  meta_title: 'Compra y Vende'
+  activerecord:
+    models:
+      product: Producto
+    attributes:
+      product:
+        title: 'Titulo'
+        description: 'Descripcion'
+        price: 'Precio'
+        photo: 'Foto'
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: 'No puede estar vacio'
+            description:
+              blank: 'No puede estar vacio'
+            price:
+              blank: 'No puede estar vacio'
+  common:
+    confirm: 'Estas Seguro?'
+    back: 'volver'
+    not_logged_in: 'Tienes que hacer login o crearte una cuenta'
+    not_authorized: 'No tienes permisos para esta acción'
+    not_found: 'no se ha encontrado'
+  shared:
+    header:
+      add: 'Añadir Producto'
+      login: 'Acceso'
+      register: 'Registro'
+      logout: 'Salir'
+      favorites: 'Favoritos'
+      updated: 'Tu producto se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu producto se ha eliminado correctamente'
+  authentication:
+    users:
+      create:
+        created: 'tu cuenta se ha creado!'
+    sessions:
+      create:
+        created: 'Bienvenido'
+        failed: 'Login Invalido'
+  products:
+    edit:
+      title: 'Editar Producto'
+    new:
+      title: 'Añadir Producto'
+     form:
+      title_placeholder: '¿Qué quieres vender?'
+      description_placeholder: '¿Puedes describir el producto?'
+      price_placeholder: '¿Cuánto cuesta?'
+      category_placeholder: '¿En qué categoría encaja mejor?'
+      submit: 'Véndelo!'
+    index:
+      title: 'Productos'
+      all: 'Todos'
+      min_price: 'Precio Minimo'
+      max_price: 'Precio Maximo'
+      query_text: 'Que quieres Buscar?'
+      expensive: 'Más Caros'
+      cheapest: 'Más Barato'
+      newest: 'Añadidos Recientemente'
+    show:
+      edit: 'Editar Producto'
+      delete: 'Borrar Producto'
+      view_more_products: 'ver mas productos de %{username}'
+    create:
+      created: 'Tu Producto fue creado'
+    update:
+      updated: 'tu producto se ha actualizado correctamente'
+    destroy:
+      destroyed: 'tu producto se ha eliminado correctamente'
+  categories:
+    category:
+      edit: 'Editar'
+      delete: 'Borrar'
+    index:
+      title: 'Categorías'
+      new: 'Añadir categoría'
+    edit:
+      title: 'Editar categoría'
+    create:
+      created: 'Tu categoría se ha creado correctamente'
+    update:
+      updated: 'Tu categoría se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu categoría se ha eliminado correctamente'
+    new:
+      title: 'Añadir categoría'
+  favorites:
+    index:
+      title: 'Favoritos'
+  user_mailer:
+    welcome:
+      subject: 'Bienvenido a Productos Ven'
+      welcome_message: 'Hey %{username}, bienvenid@ a Productos. Esperemos que vendas un montón!'
