@@ -97,4 +97,4 @@ es:
   user_mailer:
     welcome:
       subject: 'Bienvenido a Productos Ven'
-      welcome_message: 'Hey %{username}, bienvenid@ a Productos. Esperemos que vendas un montón!'
+      welcome_message: 'Hey %{username}, bienvenid@ a Productos Ven. Esperemos que vendas un montón!'

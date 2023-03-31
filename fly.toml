@@ -1,12 +1,9 @@
-# fly.toml file generated for productos on 2023-03-08T21:12:33-05:00
+# fly.toml file generated for productos on 2023-03-31T15:34:00-05:00
 
 app = "productos"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "bog"
-[processes]
-web = "bin/rails fly:server"
-worker = "bundle exec sidekiq"
 
 [build]
   [build.args]
@@ -16,15 +13,19 @@ worker = "bundle exec sidekiq"
 [deploy]
   release_command = "bin/rails fly:release"
 
-
 [env]
+  PORT = "8080"
 
 [experimental]
   auto_rollback = true
 
+[processes]
+  web = "bin/rails fly:server"
+  worker = "bundle exec sidekiq"
+
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3000
   processes = ["web"]
   protocol = "tcp"
   script_checks = []
