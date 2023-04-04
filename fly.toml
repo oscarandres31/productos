@@ -1,9 +1,54 @@
-# fly.toml file generated for productos on 2023-04-04T14:12:24-05:00
+# fly.toml file generated for productos on 2023-04-04T12:43:07-05:00
 
 app = "productos"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "bog"
+
+[build]
+  [build.args]
+    BUILD_COMMAND = "bin/rails fly:build"
+    SERVER_COMMAND = "bin/rails fly:server"
+
+[deploy]
+  release_command = "bundle exec rails db:migrate"
+
+[experimental]
+  auto_rollback = true
+
+[mounts]
+  destination = "/data"
+  source = "productos"
+
+[processes]
+  web = "bin/rails fly:server"
+  worker = "bundle exec sidekiq"
+
+[[services]]
+  http_checks = []
+  internal_port = 3000
+  processes = ["web"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
 
 [[statics]]
   guest_path = "/app/public"
