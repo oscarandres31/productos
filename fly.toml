@@ -1,4 +1,4 @@
-# fly.toml file generated for productos on 2023-04-04T12:43:07-05:00
+# fly.toml file generated for productos on 2023-04-06T17:49:00-05:00
 
 app = "productos"
 kill_signal = "SIGINT"
@@ -26,7 +26,7 @@ primary_region = "bog"
 
 [[services]]
   http_checks = []
-  internal_port = 3000
+  internal_port = 8080
   processes = ["web"]
   protocol = "tcp"
   script_checks = []
