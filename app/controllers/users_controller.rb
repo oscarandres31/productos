@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   skip_before_action :protect_pages, only: :show
 
   def show
