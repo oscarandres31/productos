@@ -26,7 +26,7 @@ primary_region = "bog"
 
 [[services]]
   http_checks = []
-  internal_port = 4000
+  internal_port = 8080
   processes = ["web"]
   protocol = "tcp"
   script_checks = []
