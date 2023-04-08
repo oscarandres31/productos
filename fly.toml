@@ -11,7 +11,7 @@ primary_region = "bog"
     SERVER_COMMAND = "bin/rails fly:server"
 
 [deploy]
-  release_command = "bundle exec rails db:migrate"
+  release_command = "bin/rails fly:release"
 
 [experimental]
   auto_rollback = true
@@ -26,7 +26,7 @@ primary_region = "bog"
 
 [[services]]
   http_checks = []
-  internal_port = 3000
+  internal_port = 4000
   processes = ["web"]
   protocol = "tcp"
   script_checks = []

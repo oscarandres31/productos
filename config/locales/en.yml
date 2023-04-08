@@ -1,5 +1,5 @@
 en:
-  app_name: 'SellIT'
+  app_name: 'Products Ven'
   meta_title: 'Buy and sell second hand products!'
   activerecord:
     models:
@@ -93,5 +93,5 @@ en:
       title: 'My favorites'
   user_mailer:
     welcome:
-      subject: 'Welcome to SellIT'
-      welcome_message: 'Hey %{username}, welcome to SellIT. We hope you sell a lot!'
+      subject: 'Welcome to Products Ven'
+      welcome_message: 'Hey %{username}, welcome to Productos Ven. We hope you sell a lot!'
