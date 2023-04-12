@@ -1,28 +1,16 @@
-# fly.toml file generated for productos on 2023-04-06T17:49:00-05:00
+# fly.toml file generated for producto on 2023-04-12T17:53:11-05:00
 
-app = "productos"
+app = "producto"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "bog"
+processes = []
 
-[build]
-  [build.args]
-    BUILD_COMMAND = "bin/rails fly:build"
-    SERVER_COMMAND = "bin/rails fly:server"
-
-[deploy]
-  release_command = "bin/rails fly:release"
+[env]
+   PORT = "8080"
 
 [experimental]
   auto_rollback = true
-
-[mounts]
-  destination = "/data"
-  source = "productos"
-
-[processes]
-  web = "bin/rails fly:server"
-  worker = "bundle exec sidekiq"
 
 [[services]]
   http_checks = []
