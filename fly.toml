@@ -4,10 +4,20 @@ app = "producto"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "bog"
-processes = []
+
+[processes]
+web = "bin/rails fly:server"
+worker = "bundle exec sidekiq"
+
+[deploy]
+  release_command = "bundle exec rails db:migrate"
+
 
 [env]
-   PORT = "8080"
+  LOG_LEVEL = "debug"
+  RAILS_ENV = "production"
+  S3_BUCKET = "producto-production"
+
 
 [experimental]
   auto_rollback = true
