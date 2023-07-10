@@ -1,23 +1,12 @@
-# fly.toml file generated for producto on 2023-04-12T17:53:11-05:00
+# fly.toml file generated for productos on 2023-07-09T21:56:42-05:00
 
-app = "producto"
+app = "productos"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "bog"
-
-[processes]
-web = "bin/rails fly:server"
-worker = "bundle exec sidekiq"
-
-[deploy]
-  release_command = "bundle exec rails db:migrate"
-
+processes = []
 
 [env]
-  LOG_LEVEL = "debug"
-  RAILS_ENV = "production"
-  S3_BUCKET = "producto-production"
-
 
 [experimental]
   auto_rollback = true
